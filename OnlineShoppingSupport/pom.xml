@@ -17,6 +17,11 @@
 
 
 	<dependencies>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
 		<!-- JAVA EE API -->
 
 		<!-- https://mvnrepository.com/artifact/javax/javaee-api -->
