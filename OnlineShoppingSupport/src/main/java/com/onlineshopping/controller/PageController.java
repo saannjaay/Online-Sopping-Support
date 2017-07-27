@@ -4,9 +4,7 @@
 package com.onlineshopping.controller;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
@@ -17,48 +15,41 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class PageController {
 
+
 	@RequestMapping(value = { "/", "/home", "/index" })
 
 	public ModelAndView index() {
 
 		ModelAndView mv = new ModelAndView("page");
-		mv.addObject("gretting", "welcome to spring mvc");
+		mv.addObject("title", "home");
+		mv.addObject("UserClickHome", true);
+		System.out.println("hello ");
 
 		return mv;
 
-/*	}
-
-	// query String concept required=false no need to set value
-	@RequestMapping(value = "/test")
-	public ModelAndView test(@RequestParam(value = "gretting", required = false) String gretting) {
-
-		if (gretting == null) {
-			// if greating value not set by default
-
-			gretting = "JAY MATA RANI";
-		}
-
-		ModelAndView mv = new ModelAndView("page");
-		mv.addObject("gretting", gretting);
-
-		return mv;
 	}
 
-	// use of path variable
-	@RequestMapping(value = "/test1/{gretting}")
-	public ModelAndView test1(@PathVariable(value = "gretting", required = false) String gretting) {
+	@RequestMapping(value = "/about")
 
-		if (gretting == null) {
-			// if greating value not set by default
-
-			gretting = "JAY MATA RANI";
-		}
+	public ModelAndView about() {
 
 		ModelAndView mv = new ModelAndView("page");
-		mv.addObject("gretting", gretting);
+		mv.addObject("title", "page");
+		mv.addObject("UserClickAbout", true);
 
 		return mv;
+
 	}
-*/
-}
+	
+	@RequestMapping(value = "/contact")
+
+	public ModelAndView contact() {
+
+		ModelAndView mv = new ModelAndView("page");
+		mv.addObject("title", "page");
+		mv.addObject("UserClickContact", true);
+
+		return mv;
+
+	}
 }
